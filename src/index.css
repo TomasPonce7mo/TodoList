@@ -1,0 +1,104 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #213547;
+    background-color: #ffffff;
+
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.textaligncenter {
+  text-align: center;
+}
+
+.bottomline {
+  line-height: 200%;
+  border-bottom: rgba(255, 255, 0, 0.534) 1px solid;
+  width: 98%;
+}
+
+.task {
+  line-height:0.5em;
+  width: 50%;
+  text-align: left;
+}
+
+.tasklist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.taskform {
+  width: 50%;
+  text-align: left;
+  border: rgba(255, 255, 0, 0.534) 1px solid;
+  margin-top: 1%;
+  padding-left: 1%;
+}
+
+.textalignright {
+  text-align: right;
+}
+
+.textalignleft {
+  text-align: left;
+}
+
+textarea {
+  margin-top: 1%;
+  resize: none;
+  width: 50%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgba(255, 255, 0, 0.534)f;
+  outline: none;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size:medium;
+
+  color-scheme: light dark;
+  color: #213547;
+    background-color: #ffffff;
+
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input {
+  width: 50%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgba(255, 255, 0, 0.534)f;
+  outline: none;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size:x-large;
+
+  color-scheme: light dark;
+  color: #213547;
+    background-color: #ffffff;
+
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.button {
+  width: 30%;
+  height: 10%;
+    border-radius: 6px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    cursor:pointer;
+    background-color: rgba(255, 255, 0, 0.295)f;
+    border-style: solid;
+  border-width: 2px;
+  border-color: rgba(255, 255, 0, 0.534)f;
+  margin: 2%;
+}
