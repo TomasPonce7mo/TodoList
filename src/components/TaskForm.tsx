@@ -1,36 +1,46 @@
-import { form } from "../types/types";
+import { useState } from "react";
+import { useTodos } from "../hooks/useTodos";
+import { Task } from "../interface/interface";
 
-interface Props {
-  formulario: form,
-  setFormulario: any
-}
 
-export const TaskForm = ( props:Props ) => {
 
-    const tx = document.getElementsByTagName("textarea");
-for (let i = 0; i < tx.length; i++) {
-  tx[i].setAttribute("style", "height:" + (tx[i].scrollHeight) + "px;overflow-y:hidden;");
-  tx[i].addEventListener("input", OnInput, false);
-}
 
-function OnInput(this: any) {
-  this.style.height = 0;
-  this.style.height = (this.scrollHeight) + "px";
-}
+export const TaskForm = () => {
 
-function submitEvent () {
-  props.setFormulario({
-    title: document.getElementsByName("title").values,
-    desc: document.getElementsByName("desc").values,
-  })
-}
+  const [title, settitle] = useState("")
+  const [desc, setdesc] = useState("")
+
+  const { addTask } = useTodos();
+  const [idcount, setidcount] = useState(0)
+
+
+
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (title === "" || desc === "") {
+      alert("Campos vacios")
+    }
+    else {
+      const newTask: Task = {
+        id: idcount,
+        title: title,
+        desc: desc,
+        completed: false
+      }
+      addTask(newTask)
+      settitle("")
+      setdesc("")
+      setidcount(idcount +1)
+    }
+  }
 
   return (
-    <form id="taskform" className="taskform">
-        <h2 className="bottomline">Add a new task</h2>
-        <input name="title" type="text" defaultValue="Title"></input> <br/>
-        <textarea name="desc" defaultValue="Description"></textarea> <br/>
-        <button className="button" type="submit" onSubmit={submitEvent}>Add</button>
+    <form id="taskform" className="taskform" onSubmit={e => handleSubmit(e)}>
+      <h2 className="bottomline">Add a new task</h2>
+      <input name="title" type="text" placeholder="Title" value={title} onChange={e => settitle(e.target.value)}></input> <br />
+      <textarea name="desc" placeholder="Description" value={desc} onChange={e => setdesc(e.target.value)}></textarea> <br />
+      <button className="button" type="submit">Add</button>
     </form>
   )
 }

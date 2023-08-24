@@ -1,20 +1,23 @@
-import { useState } from 'react'
 import { TaskForm } from './components/TaskForm'
 import { TaskList } from './components/TaskList'
-import { form } from './types/types'
 
 function App() {
 
-  const [formulario, setFormulario] = useState({} as form)
-
   return (
     <>
-    <div className='textaligncenter'>
-      <h1 className='bottomline'>To-do List</h1>
-      </div>
-      <TaskList formulario={formulario} setFormulario={setFormulario} />
-      <TaskForm formulario={formulario} setFormulario={setFormulario} />
-      <br/> <br/> <br/> <br/> <br/>
+      <main className='main'>
+        <header className='header'>
+          <h1>To-do List</h1>
+        </header>
+        <section className="section">
+          <article className="article form">
+            <TaskForm />
+          </article>
+          <article className="article list">
+            <TaskList />
+          </article>
+        </section>
+      </main>
     </>
   )
 }
