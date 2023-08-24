@@ -1,37 +1,21 @@
-import { useEffect, useState } from "react"
-import { Task } from "./Task"
-import { form } from "../types/types"
+import { TaskItem } from "./Task"
+import { useTodos } from "../hooks/useTodos"
+import { useState } from "react";
 
 
 
-interface Props {
-  formulario: form,
-  setFormulario: any
-}
+export const TaskList = () => {
 
-
-
-export const TaskList = ( props:Props ) => {
+  const { tasks } = useTodos();
+  const [filteredTasks, setfilteredTasks] = useState(tasks)
   
-  const [formulariomap, setFormulario] = useState([{} as form])
-  useEffect(() => {
-    setFormulario([{
-      title: "",
-      desc: ""
-    }])
-  }, [])
-  
-  useEffect(() => {
-    formulariomap.push(props.formulario)
-    console.log("loop")
-  }, [props.formulario])
   return (
-    <>
+    
     <div className="tasklist">
-      
-    {formulariomap.map((formulario, index) => <Task title={formulario.title} desc={formulario.desc} completed={false} key={index} />)}
+      {
+        tasks.map(task => <TaskItem key={task.id}  task={task} />)
+      }
     </div>
-    </>
   )
 }
-         
+
