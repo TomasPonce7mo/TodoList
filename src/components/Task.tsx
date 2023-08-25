@@ -36,9 +36,9 @@ export const TaskItem = (props: Props) => {
       <button className="task" onClick={() => toggleTodo(props.task.id)} onDoubleClick={() => deleteTask(props.task)}>
         <div className="taskprop">
           <h2>{props.task.title}</h2>
-          <p>{props.task.desc}</p>
+          <p className="text">{props.task.desc}</p>
         </div>
-        <div className="textalignright"><Circle width="20" height="14" cx="10" cy="8" r="5" fill={status.color} /><span>{status.text}</span></div>
+        <div><Circle width="20" height="14" cx="10" cy="8" r="5" fill={status.color} /><span>{status.text}</span></div>
       </button>
     </>
   )

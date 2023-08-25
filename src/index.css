@@ -69,7 +69,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  gap: 1em;
+  gap: .2em;
 }
 
 .task{
@@ -77,8 +77,21 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .7em .4em;
+  padding: .4em .4em;
   border: 1px solid rgb(51, 51, 255);
+  flex-wrap: wrap;
+}
+
+.taskprop {
+  width: 70%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.text {
+  width: 100%;
+  word-wrap: break-word;
 }
 
 .taskform {
@@ -89,6 +102,25 @@ body {
   flex-direction: column;
   gap: .2em;
   padding: .5em;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+}
+
+.containerbuttons {
+  width: 80%;
+  height: 40px;
+  margin: auto;
+  justify-content: space-between;
+  display: flex;
+}
+
+.containerbuttons>.button{
+  width: 30%;
 }
 
 textarea {
@@ -120,7 +152,8 @@ input {
 
 .button {
   width: 50%;
-  height: 10%;
+  height: 100%;
+  max-height: 5em;
   border-radius: 6px;
   padding-top: 1%;
   padding-bottom: 1%;
